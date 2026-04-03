@@ -57,6 +57,20 @@ int main()
     return 0;
 }
 
+void VeKhung(){
+for (int i = MINX ; i<=MAXX ; i++)
+for (int j = MINX ; j<=MAXY ; j++)
+if ((i==MINX) || (i==MAXX) || (j==MINY) || (j==MAXY)){
+gotoxy(i,j);
+printf("+");
+}
+void VeKhung(){
+for (int i = MINX ; i<=MAXX ; i++)
+for (int j = MINX ; j<=MAXY ; j++)
+if ((i==MINX) || (i==MAXX) || (j==MINY) || (j==MAXY)){
+gotoxy(i,j);
+printf("+");
+}
 
 void gotoxy( int column, int line )
   {
@@ -68,3 +82,10 @@ void gotoxy( int column, int line )
     coord
     );
   }
+void VeKhung(){
+for (int i = MINX ; i<=MAXX ; i++)
+for (int j = MINX ; j<=MAXY ; j++)
+if ((i==MINX) || (i==MAXX) || (j==MINY) || (j==MAXY)){
+gotoxy(i,j);
+printf("+");
+}
