@@ -67,6 +67,16 @@ public:
         }
     }
 };
+void VeKhung() {
+    for (int i = MINX; i <= MAXX; i++) {
+        gotoxy(i, MINY); cout << "+";
+        gotoxy(i, MAXY); cout << "+";
+    }
+    for (int j = MINY; j <= MAXY; j++) {
+        gotoxy(MINX, j); cout << "+";
+        gotoxy(MAXX, j); cout << "+";
+    }
+}
 
 int main()
 {
