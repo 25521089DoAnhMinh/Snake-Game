@@ -5,14 +5,26 @@
 #include <ctime>
 
 using namespace std;
-void gotoxy( int column, int line );
-struct Point{
-    int x,y;
+
+#define MINX 0
+#define MAXX 79
+#define MINY 0
+#define MAXY 23
+
+void gotoxy(int column, int line) {
+    COORD coord;
+    coord.X = column;
+    coord.Y = line;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
+struct Point {
+    int x, y;
 };
 
-class CONRAN{
+class CONRAN {
 public:
-    struct Point A[100];
+    Point A[100];
     int DoDai;
     struct Point Moi;
 
@@ -63,15 +75,16 @@ int main()
     int Huong = 0;
     char t;
 
-    while (1){
-        if (kbhit()){
+    while (1) {
+        if (kbhit()) {
             t = getch();
-            if (t=='a') Huong = 2;
-            if (t=='w') Huong = 3;
-            if (t=='d') Huong = 0;
-            if (t=='x') Huong = 1;
+            if (t == 'a') Huong = 2;
+            if (t == 'w') Huong = 3;
+            if (t == 'd') Huong = 0;
+            if (t == 'x') Huong = 1;
         }
         system("cls");
+        VeKhung();
         r.Ve();
         r.DiChuyen(Huong);
 
@@ -79,17 +92,5 @@ int main()
 
         Sleep(300);
     }
-
     return 0;
 }
-
-void gotoxy( int column, int line )
-  {
-  COORD coord;
-  coord.X = column;
-  coord.Y = line;
-  SetConsoleCursorPosition(
-    GetStdHandle( STD_OUTPUT_HANDLE ),
-    coord
-    );
-  }
